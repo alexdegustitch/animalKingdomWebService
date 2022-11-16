@@ -34,6 +34,7 @@ public class VoteService {
                 newVote.setVoting_time(currentTime);
                 newVote.setUsername(voteModel.getUsername());
                 newVote.setOffered_animal(voteModel.getOffered_animal());
+
                 newVote.setWanted_animal(voteModel.getWanted_animal());
                 try {
                     voteRepository.save(newVote);
