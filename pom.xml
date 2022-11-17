@@ -14,7 +14,7 @@
 	<name>WebService</name>
 	<description>Service for retrieving data</description>
 	<properties>
-		<java.version>18</java.version>
+		<java.version>19</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
