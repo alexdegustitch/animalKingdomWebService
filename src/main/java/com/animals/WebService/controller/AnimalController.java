@@ -47,7 +47,7 @@ public class AnimalController {
 
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     @GetMapping("/allAnimals")
     public ResponseEntity<List<AnimalModel>> allAnimals(){
         return new ResponseEntity<>(animalService.getAllAnimals(), HttpStatus.OK);
