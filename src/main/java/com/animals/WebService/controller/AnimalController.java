@@ -16,7 +16,7 @@ public class AnimalController {
     @Autowired
     private AnimalService animalService;
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     @GetMapping("/findAnimal/{number}")
     public ResponseEntity<AnimalModel> getAnimalByNumber(@PathVariable(value = "number") Integer number){
         AnimalModel animalModel = animalService.getAnimalByNumber(number);
@@ -26,7 +26,7 @@ public class AnimalController {
         return new ResponseEntity<>(animalModel, HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     @PostMapping("/addAnimal")
     public AnimalModel newAnimal(@RequestBody AnimalModel newAnimal) {
         if (animalService.getAnimalByNumber(newAnimal.getNumber()) == null)
@@ -37,7 +37,7 @@ public class AnimalController {
 
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     @PostMapping("/animalsSameOrder")
     public List<AnimalModel> animalsOfSameOrder(@RequestBody Map<String, String> body) {
         String order = body.get("order");

@@ -19,25 +19,25 @@ public class TournamentController {
     private TournamentService tournamentService;
 
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     @PostMapping("/addTournament")
     public TournamentModel newTournament(@RequestBody TournamentModel tournamentModel){
         return tournamentService.saveTournament(tournamentModel);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     @GetMapping("/activeTournament")
     public ResponseEntity<TournamentModel> getActiveTournament(){
         return new ResponseEntity<>(tournamentService.getActiveTournamnets().get(0), HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     @GetMapping("/allTournaments")
     public List<TournamentModel> getAllTournaments(){
         return tournamentService.getAllTournaments();
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     @GetMapping("/getTourById/{tour}")
     public TournamentModel getAllTournaments(@PathVariable(value = "tour") Integer id_tour){
         return tournamentService.getTournamentById(id_tour);

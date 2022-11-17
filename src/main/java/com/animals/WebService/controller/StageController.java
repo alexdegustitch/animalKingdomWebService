@@ -27,7 +27,7 @@ public class StageController {
     @Autowired
     private AnimalService animalService;
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     @PostMapping("/addStage")
     public StageModel addStage(@RequestBody StageModel stageModel){
         StageModel currStage = stageService.saveStage(stageModel);
@@ -37,7 +37,7 @@ public class StageController {
         return currStage;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     @PostMapping("/getStageForTour")
     public ResponseEntity<StageModel> getStageByTypeForTour(@RequestBody Map<String, String> body){
         int id_tour = Integer.parseInt(body.get("id_tour"));
@@ -46,7 +46,7 @@ public class StageController {
         return new ResponseEntity<>(stageService.getStageByTypeForTour(id_tour, stage), HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     @GetMapping("/getStages/{tour}")
     public List<StageModel> getStagesForTour(@PathVariable(value = "tour") Integer id_tour)
     {

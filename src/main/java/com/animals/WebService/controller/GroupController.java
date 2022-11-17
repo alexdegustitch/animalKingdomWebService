@@ -22,33 +22,33 @@ public class GroupController {
     @Autowired
     private GroupService groupService;
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     @PostMapping("/getGroupsForStage")
     public ResponseEntity<List<GroupModel>> getAllGroupsForStage(@RequestBody Map<String, Integer> body){
         int stage = body.get("id_stage");
         return new ResponseEntity<>(groupService.getAllGroupsForStage(stage), HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     @GetMapping("/getGroupById/{id}")
     public ResponseEntity<GroupModel> getGroupById(@PathVariable(value = "id") Integer id_group){
         return new ResponseEntity<>(groupService.getGroupById(id_group), HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     @GetMapping("/getGroupNumbers/{stage}")
     public ResponseEntity<List<Integer>> getAllGroupNumbersForStage(@PathVariable(value = "stage") Integer stage){
         return new ResponseEntity<>(groupService.getAllGroupNumbersForStage(stage), HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     @GetMapping("/getGroupsForStageAndGroupNumber/stage={stage}&number={number}")
     public ResponseEntity<List<GroupModel>> getAllGroupsForStageAndGroupNumber(@PathVariable(value = "stage") Integer stage,
                                                                                @PathVariable(value = "number") Integer number){
         return new ResponseEntity<>(groupService.getAllGroupsForStageAndGroupNumber(stage, number), HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "*")
     @GetMapping("/getGroupsForStageAndGroupNumberOrderByName/stage={stage}&number={number}")
     public ResponseEntity<List<GroupModel>> getAllGroupsForStageAndGroupNumberOrderByName(@PathVariable(value = "stage") Integer stage,
                                                                                @PathVariable(value = "number") Integer number){
