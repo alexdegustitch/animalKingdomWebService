@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -29,6 +30,14 @@ public class TournamentService {
 
     public TournamentModel getTournamentById(int id){
         return tournamentRepository.getTournamentById(id);
+    }
+
+    public List<TournamentModel> getAllActiveTournaments(){
+        return tournamentRepository.getActiveTournaments();
+    }
+
+    public List<TournamentModel> getNotFinishedTournaments(LocalDateTime now) {
+        return tournamentRepository.getNotFinishedTournaments(now);
     }
 
 }

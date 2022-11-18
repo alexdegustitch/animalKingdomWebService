@@ -30,4 +30,17 @@ public class StageService {
     public List<StageModel> getActiveStages(){
         return stageRepository.getActiveStages();
     }
+
+    public StageModel getActiveStageForCompetition(int id_competition){
+        return stageRepository.getActiveStageForCompetition(id_competition);
+    }
+
+    public List<StageModel> getStagesForCompetition(int id_competition){
+        return stageRepository.getStagesForCompetition(id_competition);
+    }
+
+
+    public StageModel getStageForCompetitionByStageType(int id_competition, int stage){
+        return stageRepository.getStageForCompetitionByStageType(id_competition, stage);
+    }
 }

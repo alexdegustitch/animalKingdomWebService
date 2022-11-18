@@ -48,4 +48,7 @@ public class VoteService {
             }
         }
     }
+    public VoteModel getVote(int wanted_animal, String user, int stage){
+        return voteRepository.getVote(wanted_animal, user, stage);
+    }
 }

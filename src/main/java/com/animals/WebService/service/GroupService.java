@@ -42,4 +42,13 @@ public class GroupService {
         return groupRepository.findAnimalByStage(animal, stage);
     }
 
+
+    public List<GroupModel> groupsForStage(int stage, int number){
+        return groupRepository.groupsForStage(stage, number);
+    }
+
+
+    public GroupModel updatePoints(GroupModel groupModel){
+        return groupRepository.saveAndFlush(groupModel);
+    }
 }
