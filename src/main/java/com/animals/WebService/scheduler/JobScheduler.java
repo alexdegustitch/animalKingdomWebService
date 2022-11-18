@@ -1,24 +1,21 @@
 package com.animals.WebService.scheduler;
 
-import com.animals.WebService.job.StageJob;
+import com.animals.WebService.cors.job.StageJob;
 import org.quartz.*;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 
-@Configuration
-@EnableScheduling
+//@Configuration
+//@EnableScheduling
 public class JobScheduler {
-    @Bean()
+    //@Bean()
     public Scheduler scheduler(SchedulerFactoryBean factory) throws SchedulerException {
         Scheduler scheduler = factory.getScheduler();
         scheduler.start();
         return scheduler;
     }
 
-    @Bean
+    //@Bean
     public CommandLineRunner run(Scheduler scheduler) {
         return (String[] args) -> {
 
@@ -33,7 +30,7 @@ public class JobScheduler {
 
 
 
-            scheduler.scheduleJob(stageJob, triggerStageJob);
+            //scheduler.scheduleJob(stageJob, triggerStageJob);
         };
     }
 }

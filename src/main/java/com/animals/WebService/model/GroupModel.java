@@ -1,6 +1,8 @@
 package com.animals.WebService.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "group_table")
@@ -27,6 +29,9 @@ public class GroupModel {
 
     @Column
     private int active = 1;
+
+    @Column
+    private LocalDateTime last_vote_time;
 
     public GroupModel(){
 
@@ -96,5 +101,13 @@ public class GroupModel {
 
     public void setActive(int active) {
         this.active = active;
+    }
+
+    public LocalDateTime getLast_vote_time() {
+        return last_vote_time;
+    }
+
+    public void setLast_vote_time(LocalDateTime last_vote_time) {
+        this.last_vote_time = last_vote_time;
     }
 }

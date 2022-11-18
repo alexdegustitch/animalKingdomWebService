@@ -1,4 +1,4 @@
-package com.animals.WebService.job;
+package com.animals.WebService.cors.job;
 
 import com.animals.WebService.model.StageModel;
 import com.animals.WebService.model.TournamentModel;

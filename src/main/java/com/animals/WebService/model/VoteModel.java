@@ -26,6 +26,9 @@ public class VoteModel {
     @Column
     private LocalDateTime voting_time;
 
+    @Column
+    private String profile;
+
     public VoteModel(){
 
     }
@@ -85,5 +88,13 @@ public class VoteModel {
 
     public void setVoting_time(LocalDateTime voting_time) {
         this.voting_time = voting_time;
+    }
+
+    public String getProfile() {
+        return profile;
+    }
+
+    public void setProfile(String profile) {
+        this.profile = profile;
     }
 }
