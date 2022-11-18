@@ -16,7 +16,7 @@ public class VoteController {
     @Autowired
     private VoteService voteService;
 
-    @CrossOrigin(origins = "https://digitalni-album.igraoni.ca")
+
     @PostMapping("/addVote")
     public ResponseEntity<String> newVote(@RequestBody VoteModel voteModel){
         voteService.addVote(voteModel);
