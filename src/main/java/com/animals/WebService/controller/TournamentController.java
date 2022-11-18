@@ -19,25 +19,25 @@ public class TournamentController {
     private TournamentService tournamentService;
 
 
-    @CrossOrigin(origins = "https://maythebestanimalwin.herokuapp.com/*")
+    @CrossOrigin(origins = "https://maythebestanimalwin.herokuapp.com")
     @PostMapping("/addTournament")
     public TournamentModel newTournament(@RequestBody TournamentModel tournamentModel){
         return tournamentService.saveTournament(tournamentModel);
     }
 
-    @CrossOrigin(origins = "https://maythebestanimalwin.herokuapp.com/*")
+    @CrossOrigin(origins = "https://maythebestanimalwin.herokuapp.com")
     @GetMapping("/activeTournament")
     public ResponseEntity<TournamentModel> getActiveTournament(){
         return new ResponseEntity<>(tournamentService.getActiveTournamnets().get(0), HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "https://maythebestanimalwin.herokuapp.com/*")
+    @CrossOrigin(origins = "https://maythebestanimalwin.herokuapp.com")
     @GetMapping("/allTournaments")
     public List<TournamentModel> getAllTournaments(){
         return tournamentService.getAllTournaments();
     }
 
-    @CrossOrigin(origins = "https://maythebestanimalwin.herokuapp.com/*")
+    @CrossOrigin(origins = "https://maythebestanimalwin.herokuapp.com")
     @GetMapping("/getTourById/{tour}")
     public TournamentModel getAllTournaments(@PathVariable(value = "tour") Integer id_tour){
         return tournamentService.getTournamentById(id_tour);

@@ -16,7 +16,7 @@ public class AnimalController {
     @Autowired
     private AnimalService animalService;
 
-    @CrossOrigin(origins = "https://maythebestanimalwin.herokuapp.com/*")
+    @CrossOrigin(origins = "https://maythebestanimalwin.herokuapp.com")
     @GetMapping("/findAnimal/{number}")
     public ResponseEntity<AnimalModel> getAnimalByNumber(@PathVariable(value = "number") Integer number){
         AnimalModel animalModel = animalService.getAnimalByNumber(number);
@@ -26,7 +26,7 @@ public class AnimalController {
         return new ResponseEntity<>(animalModel, HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "https://maythebestanimalwin.herokuapp.com/*")
+    @CrossOrigin(origins = "https://maythebestanimalwin.herokuapp.com")
     @PostMapping("/addAnimal")
     public AnimalModel newAnimal(@RequestBody AnimalModel newAnimal) {
         if (animalService.getAnimalByNumber(newAnimal.getNumber()) == null)
@@ -37,7 +37,7 @@ public class AnimalController {
 
     }
 
-    @CrossOrigin(origins = "https://maythebestanimalwin.herokuapp.com/*")
+    @CrossOrigin(origins = "https://maythebestanimalwin.herokuapp.com")
     @PostMapping("/animalsSameOrder")
     public List<AnimalModel> animalsOfSameOrder(@RequestBody Map<String, String> body) {
         String order = body.get("order");
@@ -47,7 +47,7 @@ public class AnimalController {
 
     }
 
-    @CrossOrigin(origins = "https://maythebestanimalwin.herokuapp.com/*")
+    @CrossOrigin(origins = "https://maythebestanimalwin.herokuapp.com")
     @GetMapping("/allAnimals")
     public ResponseEntity<List<AnimalModel>> allAnimals(){
         return new ResponseEntity<>(animalService.getAllAnimals(), HttpStatus.OK);
